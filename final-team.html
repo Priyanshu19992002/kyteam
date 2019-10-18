@@ -2,7 +2,16 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="team.js"></script>
 <style>
+
+@font-face {
+font-family:"Vintage Warehouse";
+src:url("Vintage_Warehouse.eot?") format("eot"),url("Vintage_Warehouse.woff") format("woff"),url("Vintage_Warehouse.ttf") format("truetype"),url("Vintage_Warehouse.svg#VintageWarehouse") format("svg");
+font-weight:normal;
+font-style:normal;
+}
 
 @font-face {
 font-family: 'Adelle Regular';
@@ -13,12 +22,30 @@ src: local('Adelle Regular'), url('Adelle_Reg.woff') format('woff');
 
 body{
  font-family: 'Adelle Regular';
- background:#6FC7E1;
+ background-image:linear-gradient(#c31432,#240b36);
  }
+
+ .kylogo{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width:100px;
+  }
 
  .head h1 {
    text-align: center;
    font-size: 60px;
+ }
+
+ .hello p {
+   font-family: "Vintage Warehouse";
+   font-size: 60px;
+   text-align: center;
+   margin-top: 20px;
+ }
+
+ .post {
+   margin-bottom: 60px;
  }
 
 /*#p1{color:blue;
@@ -34,30 +61,30 @@ h2{/*left:calc(50vw - 100px);*/
    color:#FAF2E8;
    padding:20px;
    font-size:30px;
-   font-style:italic;
+   font-family:'Adelle Regular';
    margin-bottom:30px;
-   margin-left: -1%;
+   margin-left: 1%;
    position: relative;
    animation-name: example;
-   animation-duration: 4s;
+   animation-duration: 0.8s;
 }
 @keyframes example {
-  0%   {color:seagreen;left:calc(-50vw + 100px);}
+  0%   {color:seagreen;left:calc(-50vw + 200px);}
   100% {left:calc(0vw); }
 
 }
 .polaroid{
-    width:240px;
-    height:240px;
+    width:275px;
+    height:275px;
     box-sizing:border-box;
-    padding:5px;
-    background:#FFA883;
+    padding: 10px;
+    background:#59c9a5;
     float:left;
-    margin-left:calc( (100% - 800px) / 4.5);
-    margin-right:calc( (100% - 500px) / 13);
+    margin-left:calc( (100% - 825px) / 6);
+    margin-right:calc( (100% - 825px) / 6);
     margin-bottom:90px;
     box-shadow: 5px 5px 10px black;
-    border-radius:100%;
+    border-radius:50%;
 }
 
 .polaroid.tilt-right1{
@@ -118,9 +145,10 @@ h2{/*left:calc(50vw - 100px);*/
 color:red;
 }*/
 .photo{
- background-image:radial-gradient(white 67%,#FDE3C8 33%);
-    width:230px;
-    height:230px;
+ background-image:radial-gradient(#b9e3c6 65%,#b9e3c6 35%);
+    width:235px;
+    height:235px;
+    padding: 10px;
     border-radius:100%;
 }
 .clearfix:before,
@@ -140,8 +168,10 @@ color:red;
 .image {
     position: relative;
     display: block;
-    border-radius:50%;
-    bottom:40px;
+    width: 100%;
+    margin: 0;
+    margin-left: 0%;
+    border-radius:100%;
 }
 
 /*.overlay {
@@ -207,57 +237,90 @@ animation-name: exam3;
   /*animation-delay:5s;*/
   animation-iteration-count: infinite;
 }
+
+.convenor{
+position:absolute;
+top:-30%;
+left:22%;
+color:blue;
+font-size:20px;
+color: #FAF2E8;
+text-shadow:2px 1px  3px red;
+margin:15px;
+}
+
 @keyframes exam1{
 0% {left:6px;top:70%}
-16.66% {left:180px;top:42%}
+16.66% {left:265px;top:42%}
 33.33% {left:6px;top:15%}
-33.33%,100%{left:6px;top:15%}
+33.33%,100%{left:-10px;top:15%}
 }
 @keyframes exam2{
-0% {left:180px;top:42%}
+0% {left:265px;top:42%}
 16.66% {left:6px;top:15%}
 33.33% {left:6px;top:70%}
-33.33%,100% {left:6px;top:70%}
+33.33%,100% {left:-10px;top:70%}
 }
 @keyframes exam3{
 0% {left:6px;top:15%}
 16.66% {left:6px;top:70%}
 33.33% {left:188px;top:42%}
-33.33%,100% {left:215px;top:42%}
+33.33%,100% {left:265px;top:42%}
 }
 @media only screen and (max-width: 738px) {
 .ribbon{transform:scale(0.75);}
-.ribbon1 {transform: matrix(1,0,0,1,2,-5);
+.ribbon1 {transform: matrix(0.7,0,0,1,-40,-5);
 }
 @keyframes peru{
 0%{top:-50px;}
 100%{top:-40px;}
 }
+
+.holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+  display: none;
+}
+
+h2 {
+  margin-bottom: -10px;
+  padding-bottom: 0px;
+}
+
+.hello p {
+  font-size: 45px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.post {
+  margin-bottom: -10px;
+}
+
  .polaroid {
     width:200px;
     height:200px;
-    margin-bottom:100px;
+    margin-top: 100px;
+    margin-bottom:60px;
     margin-left:calc( (100% - 400px) / 4);
     margin-right:calc( (100% - 400px) / 4);
   }
   .photo{
-    width:190px;
-    height:190px;
+    width:160px;
+    height:160px;
   }
   .overlay{
   bottom:40px;
 
   }
   .image{
-  width:100%;
-  height:-100%;
+  width:10%;
+
   }
   .name{
   top:-50px;
   }
   .container img{
-   width:190px;
-   height:216px;
+   width:160px;
+   height:160px;
   }
   @keyframes exam1{
 0% {left:6px;top:70%}
@@ -280,25 +343,52 @@ animation-name: exam3;
 }
 @media only screen and (max-width: 500px) {
 .ribbon{transform:matrix(0.6,0,0,0.635,-20,-16);}
-.ribbon1 {transform: matrix(1.130,0,0,1.25,15,5);}
+.ribbon1 {transform: matrix(0.8,0,0,1.05,-20,5);}
 
+.holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+  display: none;
+}
+
+h2 {
+  margin-bottom: -10px;
+  padding-bottom: 0px;
+}
+
+.post {
+  margin-bottom: -10px;
+}
+
+.kylogo{
+  width: 52px;
+  left: 0px;
+  top: 14px;
+  margin-right: 10px;
+}
 .ribbon {
   left: 0%;
+}
+
+.hello p {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: 12px;
 }
 @keyframes peru{
 0%{top:-50px;}
 100%{top:-40px;}
 }
  .polaroid {
-    width:270px;
-    height:270px;
-    margin-bottom:150px;
-    margin-left:calc( (100% - 270px) / 2);
-    margin-right:calc( (100% - 270px) / 2);
+    width:250px;
+    height:250px;
+    margin-top: 100px;
+    margin-bottom:70px;
+    margin-left:calc( (100% - 250px) / 2);
+    margin-right:calc( (100% - 250px) / 2);
   }
   .photo{
-    width:260px;
-    height:260px;
+    width:210px;
+    height:210px;
   }
   .overlay{
   bottom:40px;
@@ -306,37 +396,78 @@ animation-name: exam3;
   }
   .image{
   width:100%;
-  height:-100%;
+  margin-left: 0px;
   }
   .name{
   top:-50px;
   }
   .container img{
-   width:260px;
-   height:300px;
+   width:210px;
+   height:210px;
   }
   @keyframes exam1{
 0% {left:6px;top:70%}
-16.66% {left:257px;top:42%}
+16.66% {left:240px;top:42%}
 33.33% {left:6px;top:15%}
-33.33%,100%{left:6px;top:15%}
+33.33%,100%{left:-10px;top:15%}
 }
 @keyframes exam2{
-0% {left:257px;top:42%}
+0% {left:240px;top:42%}
 16.66% {left:6px;top:15%}
 33.33% {left:6px;top:70%}
-33.33%,100% {left:6px;top:70%}
+33.33%,100% {left:-10px;top:70%}
 }
 @keyframes exam3{
 0% {left:6px;top:15%}
 16.66% {left:6px;top:70%}
 33.33% {left:247px;top:42%}
-33.33%,100% {left:247px;top:42%}
+33.33%,100% {left:240px;top:42%}
 }
 h2 {
   font-size: 25px;
 }
 }
+
+@media only screen and (max-width: 850px) and (min-width: 760px) {
+ .polaroid {
+   margin-left:8%;
+   margin-right:4%;
+ }
+
+ /* .holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+   display: none;
+ }
+
+ h2 {
+   margin-bottom: -10px;
+   padding-bottom: 0px;
+ }
+
+ .post {
+   margin-bottom: -10px;
+ } */
+}
+
+@media only screen and (max-width: 1025px) and (min-width: 1020px) {
+  .polaroid {
+    margin-left:calc( (100% - 700px) / 9);
+    margin-right:calc( (100% - 800px) / 15);
+  }
+
+  /* .holder, .advisers, .internal, .external, .log, .market, .social, .technical, .events, .creative, .design {
+    display: none;
+  }
+
+  h2 {
+    margin-bottom: -10px;
+    padding-bottom: 0px;
+  }
+
+  .post {
+    margin-bottom: -10px;
+  } */
+}
+
 .ribbon {
 	font-size: 50px;
 
@@ -353,7 +484,7 @@ h2 {
 
 	padding: 2px 0px;
 
-	margin: 5px auto;
+	margin: 20px auto;
 }
 
 
@@ -411,12 +542,12 @@ h2 {
 .ribbon1 {
 	font-size: 25px;
 
-	width: 230px;
+	width: 275px;
 
 	position: absolute;
+  border-radius: 15px;
 
-
-	background: #FDE3C8;
+	background: #b9e3c6;
 
 	color: #2e778c;
 
@@ -425,7 +556,7 @@ h2 {
 	padding: 4px 0px;
 
 	margin: 16px auto;
-    /*margin-left:50px;*/
+    margin-left:-3px;
     top:-15px;
     z-index:1;
     animation-name:peru;
@@ -437,7 +568,7 @@ h2 {
 100%{top:-20px;z-index:1;opacity:1;}
 }
 
-.ribbon1:before,.ribbon1:after{
+/*.ribbon1:before,.ribbon1:after{
 	content: "";
 
 	position: absolute;
@@ -462,8 +593,8 @@ h2 {
 
 	border-right-color: transparent;
 }
-
-.ribbon-folds1:before,.ribbon-folds1:after{
+*/
+/*.ribbon-folds1:before,.ribbon-folds1:after{
 	content: "";
 
 	position: absolute;
@@ -487,40 +618,33 @@ h2 {
 	right: -0px;
 
         border-width: 10px 10px 0 0;
-}
+}*/
 .ribbon-z-index{position: relative;z-index: 1; }
 
-.convenor{
-position:absolute;
-top:-30%;
-left:22%;
-color:blue;
-font-size:20px;
-color: #FAF2E8;
-text-shadow:2px 1px  3px red;
-margin:15px;
-}
 </style>
 </head>
 <body>
-  <div class="ribbon-z-index">
+  <a href="../index.html">
+      <img src="20190804_220113.png" alt="" class="kylogo">
+      </a>
+  <div class="hello">
 
-  <p class="ribbon">
-  <strong class="ribbon-folds">KY CORE TEAM</strong></p>
+  <p>
+  KY CORE TEAM</p>
 
   </div>
 
 
 
 <div class="clearfix" ontouchstart="">
-<h2 style="margin-bottom:50px">POST HOLDERS</h2>
-    <div class="polaroid tilt-left3">
-    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+<h2 class="post">POST HOLDERS</h2>
+    <div class="polaroid tilt-left3 holder">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px ></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px ></a></div>
 	<div class="photo" >
     <div class="convenor">CONVENOR</div>
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="cihan.jpg" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -534,13 +658,13 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 holder">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
     <div class="convenor" style="left:16%;">CO-CONVENOR</div>
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="man.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -552,14 +676,14 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 holder">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
          <div class="photo" >
          <div class="convenor" style="left:16%;">CO-CONVENOR</div>
              <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
+                 <img src="man.png" width="230px" height="230px"  class="image">
 
              </div>
           </div>
@@ -577,13 +701,13 @@ margin:15px;
 
 
 <div class="clearfix" ontouchstart="">
-<h2>ADVISERS</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="adv">ADVISERS</h2>
+    <div class="polaroid tilt-left3 advisers">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -597,12 +721,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 advisers">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -614,13 +738,13 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 advisers">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
          <div class="photo" >
              <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
+                 <img src="1.png" width="230px" height="230px"  class="image">
 
              </div>
           </div>
@@ -639,13 +763,13 @@ margin:15px;
 
 
 <div class="clearfix" ontouchstart="">
-<h2>MARKETING</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="mark">MARKETING</h2>
+    <div class="polaroid tilt-left3 market">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -659,12 +783,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 market">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -676,13 +800,13 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 market">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
          <div class="photo" >
              <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
+                 <img src="1.png" width="230px" height="230px"  class="image">
 
              </div>
           </div>
@@ -698,13 +822,13 @@ margin:15px;
 
 
 <div class="clearfix" ontouchstart="">
-<h2>SOCIAL MEDIA</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="soc">SOCIAL MEDIA</h2>
+    <div class="polaroid tilt-left3 social">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -718,12 +842,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 social">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -735,13 +859,13 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 social">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
          <div class="photo" >
              <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
+                 <img src="1.png" width="230px" height="230px"  class="image">
 
              </div>
           </div>
@@ -755,13 +879,13 @@ margin:15px;
 </div>
 
 <div class="clearfix" ontouchstart="">
-<h2>TECHNICAL TEAM</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="tech">TECHNICAL TEAM</h2>
+    <div class="polaroid tilt-left3 technical">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -775,12 +899,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 technical">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -792,13 +916,13 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 technical">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
          <div class="photo" >
              <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
+                 <img src="1.png" width="230px" height="230px"  class="image">
 
              </div>
           </div>
@@ -812,8 +936,8 @@ margin:15px;
 </div>
 
 <div class="clearfix" ontouchstart="">
-<h2>EVENTS TEAM</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="eve">EVENTS TEAM</h2>
+    <div class="polaroid tilt-left3 events">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
@@ -832,12 +956,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 events">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -849,64 +973,7 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
-    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
-    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
-    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
-         <div class="photo" >
-             <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
-
-             </div>
-          </div>
-	  <div class="ribbon-z-index">
-
-<p class="ribbon1">
-<strong class="ribbon-folds1">jainag</strong></p>
-
-</div>
-   </div>
-</div>
-
-<div class="clearfix" ontouchstart="">
-<h2>LOGISTICS AND OPERATIONS</h2>
-    <div class="polaroid tilt-left3">
-    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
-    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
-    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
-	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
-
-          </div>
-        </div>
-         <div class="ribbon-z-index">
-
-<p class="ribbon1">
-<strong class="ribbon-folds1">chris</strong></p>
-
-</div>
-    </div>
-
-
-
-    <div class="polaroid tilt-left3">
-    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
-    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
-    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
-	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
-
-          </div>
-        </div>
-         <div class="ribbon-z-index">
-
-<p class="ribbon1">
-<strong class="ribbon-folds1">chris</strong></p>
-
-</div>
-    </div>
-
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 events">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
@@ -926,8 +993,65 @@ margin:15px;
 </div>
 
 <div class="clearfix" ontouchstart="">
-<h2>CREATIVE TEAM</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="lao">LOGISTICS AND OPERATIONS</h2>
+    <div class="polaroid tilt-left3 log">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
+	<div class="photo" >
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">chris</strong></p>
+
+</div>
+    </div>
+
+
+
+    <div class="polaroid tilt-left3 log">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
+	<div class="photo" >
+          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+
+          </div>
+        </div>
+         <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">chris</strong></p>
+
+</div>
+    </div>
+
+    <div class="polaroid tilt-left3 log">
+    <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
+    <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
+    <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
+         <div class="photo" >
+             <div class="container">
+                 <img src="1.png" width="230px" height="230px"  class="image">
+
+             </div>
+          </div>
+	  <div class="ribbon-z-index">
+
+<p class="ribbon1">
+<strong class="ribbon-folds1">jainag</strong></p>
+
+</div>
+   </div>
+</div>
+
+<div class="clearfix" ontouchstart="">
+<h2 class="ct">CREATIVE TEAM</h2>
+    <div class="polaroid tilt-left3 creative">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
@@ -946,12 +1070,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 creative">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -963,7 +1087,7 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 creative">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
@@ -982,13 +1106,13 @@ margin:15px;
    </div>
 </div>
 <div class="clearfix" ontouchstart="">
-<h2>INTERNAL PUBLICITY</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="ip">INTERNAL PUBLICITY</h2>
+    <div class="polaroid tilt-left3 internal">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -1002,12 +1126,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 internal">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -1019,7 +1143,7 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 internal">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
@@ -1039,13 +1163,13 @@ margin:15px;
 </div>
 
 <div class="clearfix" ontouchstart="">
-<h2>DESIGN TEAM</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="dt">DESIGN TEAM</h2>
+    <div class="polaroid tilt-left3 design">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -1059,12 +1183,12 @@ margin:15px;
 
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 design">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -1076,13 +1200,13 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 design">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
          <div class="photo" >
              <div class="container">
-                 <img src="1.png" width="230px" height="270px"  class="image">
+                 <img src="1.png" width="230px" height="230px"  class="image">
 
              </div>
           </div>
@@ -1098,13 +1222,13 @@ margin:15px;
 
 
 <div class="clearfix" ontouchstart="">
-<h2>EXTERNAL PUBLICITY</h2>
-    <div class="polaroid tilt-left3">
+<h2 class="et">EXTERNAL PUBLICITY</h2>
+    <div class="polaroid tilt-left3 external">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -1116,12 +1240,12 @@ margin:15px;
 </div>
     </div>
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 external">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
@@ -1134,12 +1258,12 @@ margin:15px;
     </div>
 
 
-    <div class="polaroid tilt-left3">
+    <div class="polaroid tilt-left3 external">
     <div class="rotatel"><a href="https://www.facebook.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27578.svg  width=40px height=40px></a></div>
     <div class="rotater"><a href="https://twitter.com/" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27640.svg  width=40px height=40px></a></div>
     <div class="rotatet"> <a href="https://www.linkedin.com/login" target="_blank"><img src=https://image.flaticon.com/icons/svg/27/27822.svg  width=40px height=40px></a></div>
 	<div class="photo" >
-          <div class="container"><img src="1.png" width="230px" height="270px" class="image">
+          <div class="container"><img src="1.png" width="230px" height="230px" class="image">
 
           </div>
         </div>
