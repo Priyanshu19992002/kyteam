@@ -59,3 +59,7 @@ $(document).ready(function(){
     });
   });
 }
+$(window).scroll(function() {
+var theta = $(window).scrollTop() / 720 % Math.PI;
+$('.kylogo').css({ transform: 'rotate(' + theta + 'rad)' });
+});
